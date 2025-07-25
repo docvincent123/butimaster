@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+:root {
+  --primary-bg: #FFE7D1;
+  --accent: #FF8A65;
+  --text-dark: #334155;
+  --card-bg: #FFFFFF;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #F9F9F9;
+  color: var(--text-dark);
+}
+
+/* Header */
+.header {
+  background-color: var(--primary-bg);
+  box-shadow: 0 2px 8px var(--shadow-color);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .brand {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Hero Slider */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.hero-slider img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease;
+  opacity: 0;
+}
+.hero-slider img.active {
+  opacity: 1;
+}
+.hero-slider .slide-caption {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 2rem;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Booking Form */
+.booking-form {
+  position: relative;
+  max-width: 900px;
+  margin: -60px auto 2rem;
+  background: var(--card-bg);
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.booking-form input,
+.booking-form button {
+  flex: 1;
+  min-width: 150px;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+}
+.booking-form button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Masters List */
+.masters-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+/* Master Card */
+.master-card {
+  background: var(--card-bg);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px var(--shadow-color);
+  width: 260px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.master-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+.master-card .card-body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.master-card .card-body h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.master-card .card-body p {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #666;
+}
+.master-card .card-body .card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.master-card .card-body .card-footer a {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .booking-form { flex-direction: column; }
+}
